@@ -1,0 +1,34 @@
+.borderless {
+    border: 0;
+}
+
+.btnMediaQuery {
+    min-width: 62px;
+}
+
+.errorPageMain {
+    background-color: #212529;
+    color: #f8f9fa;
+    font-family: Fredoka One, cursive;
+    text-align: center;
+    padding: 50px;
+}
+
+.errorPageDiv {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #f8f9fa;
+    border-radius: 10px;
+    background-color: #212529;
+}
+
+.errorPageHeading {
+    font-size: 3em;
+    margin: 0;
+}
+
+.errorPageParagraph {
+    font-size: 1.2em;
+    margin: 20px 0;
+}

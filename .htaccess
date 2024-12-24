@@ -1,0 +1,44 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine ON
+
+    
+    RewriteCond %{REQUEST_FILENAME} -d [OR]
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule (.*) $1 [QSA,L]
+
+
+    RewriteCond %{REQUEST_URI} ^/phonebook_app/([a-zA-Z0-9-_]+)/([0-9]{1,10})/?$ [NC]
+    RewriteRule ^(.*)$ /phonebook_app/index.php?page=%1&id=%2 [L,QSA]
+
+    RewriteCond %{REQUEST_URI} ^/phonebook_app/([a-zA-Z0-9-_]+)/?$ [NC]
+    RewriteRule ^(.*)$ /phonebook_app/index.php?page=%1 [L,QSA]
+</IfModule>
+
+
+
+
+
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteBase /phonebook_app/
+
+#     # Rewrite rule for show/id
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule ^show/(\d+)$ ?page=show&id=$1 [QSA,L]
+
+#     # Rewrite rule for edit/id
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule ^edit/(\d+)$ ?page=edit&id=$1 [QSA,L]
+
+#     # Rewrite rule for delete/id
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule ^delete/(\d+)$ ?page=delete&id=$1 [QSA,L]
+
+#     # Rewrite rule for new
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule ^new$ ?page=new [QSA,L]
+# </IfModule>
